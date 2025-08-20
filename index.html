@@ -16,23 +16,11 @@
 			background-size: 400% 400%;
 			animation: gradientBG 20s ease infinite;
 			color: #222;
-			display: flex;
-			flex-direction: row;
 		}
 		@keyframes gradientBG {
 			0% { background-position: 0% 50%; }
 			50% { background-position: 100% 50%; }
 			100% { background-position: 0% 50%; }
-		}
-		main {
-			flex: 3;
-			margin-right: 20px;
-		}
-		aside {
-			flex: 1;
-			position: sticky;
-			top: 20px;
-			height: fit-content;
 		}
 		header {
 			text-align: center;
@@ -97,37 +85,6 @@
 		.pub-card:hover {
 			transform: translateX(7px);
 			background: #f0faff;
-		}
-		.update-card {
-			margin: 10px 0;
-			padding: 10px;
-			background: #e8f5e9;
-			border-left: 4px solid #43a047;
-			border-radius: 6px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-			animation: slideIn 1s ease forwards;
-			font-size: 0.9em;
-		}
-		#updates {
-			max-height: 300px;
-			overflow-y: auto;
-			scrollbar-width: thin;
-			scrollbar-color: #43a047 #e8f5e9;
-		}
-		#updates::-webkit-scrollbar {
-			width: 6px;
-		}
-		#updates::-webkit-scrollbar-track {
-			background: #e8f5e9;
-			border-radius: 10px;
-		}
-		#updates::-webkit-scrollbar-thumb {
-			background-color: #43a047;
-			border-radius: 10px;
-		}
-		@keyframes slideIn {
-			0% { opacity: 0; transform: translateX(100px); }
-			100% { opacity: 1; transform: translateX(0); }
 		}
 		.contact-icons a {
 			margin: 0 12px;
@@ -195,7 +152,7 @@
 		</section>
 
 		<section id="publications">
-			<h2><i class="fas fa-book"></i> Selected Publications</h2>
+			<h2><i class="fas fa-book"></i> Selected Recent Publications</h2>
 			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Wang, X., Fitzgerald, P. B., Koski, L., Mansouri, B., & Moussavi, Z. (2025). Using Baseline MRI Radiomic Features to Predict the Efficacy of Repetitive Transcranial Magnetic Stimulation in Alzheimer’s Patients. <em>Medical & Biological Engineering & Computing</em>. <a href="https://link.springer.com/article/10.1007/s11517-025-03366-2" target="_blank">Link</a></div>
 			<div class="pub-card">Lithgow, B. J., Saha, C., Dastgheib, Z., & Moussavi, Z. (2025). Surface versus penetrative rTMS stimulation may be more effective for AD patients with cerebrovascular disease. <em>Neuroscience Insights</em>, 20. <a href="https://doi.org/10.1177/26331055251328355" target="_blank">Link</a></div>
 			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Fitzgerald, P. B., Koski, L., Mansouri, B., Anssari, N., Wang, X., & Moussavi, Z. (2024). Can brain volume-driven characteristic features predict the response of Alzheimer’s patients to repetitive transcranial magnetic stimulation? <em>Brain Sciences</em>, 14(3). <a href="https://doi.org/10.3390/brainsci14030226" target="_blank">Link</a></div>
@@ -218,15 +175,6 @@
 			© 2025 Dr. Chandan Saha | Built using GitHub Pages
 		</footer>
 	</main>
-
-	<aside>
-		<section id="updates">
-			<h2><i class="fas fa-bullhorn"></i> Recent Updates</h2>
-			<div class="update-card">March 2025 – Presented research on opioid use disorder prediction at the Computational Psychiatry Seminar, University of Alberta.</div>
-			<div class="update-card">February 2025 – Published article in <em>Medical & Biological Engineering & Computing</em> on MRI radiomics for Alzheimer’s disease.</div>
-			<div class="update-card">January 2025 – Joined the University of Alberta as a Postdoctoral Fellow in Computational Psychiatry.</div>
-		</section>
-	</aside>
 
 	<script>
 		const sections = document.querySelectorAll("section");
