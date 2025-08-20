@@ -7,20 +7,32 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-			max-width: 900px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			max-width: 1000px;
 			margin: auto;
 			padding: 20px;
-			line-height: 1.6;
-			background: linear-gradient(-45deg, #e6f2ff, #f0f8ff, #d9f0ff, #ffffff);
+			line-height: 1.7;
+			background: linear-gradient(-45deg, #e0f7fa, #f1f8e9, #e8eaf6, #ffffff);
 			background-size: 400% 400%;
-			animation: gradientBG 15s ease infinite;
-			color: #333;
+			animation: gradientBG 20s ease infinite;
+			color: #222;
+			display: flex;
+			flex-direction: row;
 		}
 		@keyframes gradientBG {
 			0% { background-position: 0% 50%; }
 			50% { background-position: 100% 50%; }
 			100% { background-position: 0% 50%; }
+		}
+		main {
+			flex: 3;
+			margin-right: 20px;
+		}
+		aside {
+			flex: 1;
+			position: sticky;
+			top: 20px;
+			height: fit-content;
 		}
 		header {
 			text-align: center;
@@ -28,31 +40,35 @@
 		}
 		header h1 {
 			margin-bottom: 5px;
+			font-size: 2.2em;
+			color: #005b99;
 		}
 		header img {
-			width: 150px;
-			height: 150px;
+			width: 160px;
+			height: 160px;
 			border-radius: 50%;
 			margin-bottom: 15px;
-			border: 4px solid white;
-			box-shadow: 0 0 20px rgba(0,122,204,0.6);
+			border: 5px solid white;
+			box-shadow: 0 0 25px rgba(0,122,204,0.6);
 		}
 		nav a {
 			margin: 0 15px;
 			text-decoration: none;
 			color: #007acc;
 			font-weight: bold;
+			transition: color 0.3s;
 		}
 		nav a:hover {
+			color: #005b99;
 			text-decoration: underline;
 		}
 		section {
 			margin-bottom: 40px;
 			padding: 20px;
-			background: rgba(255, 255, 255, 0.7);
-			backdrop-filter: blur(8px);
-			border-radius: 10px;
-			box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+			background: rgba(255, 255, 255, 0.8);
+			backdrop-filter: blur(10px);
+			border-radius: 12px;
+			box-shadow: 0 4px 25px rgba(0,0,0,0.1);
 			opacity: 0;
 			transform: translateY(20px);
 			transition: all 0.6s ease-in-out;
@@ -64,6 +80,7 @@
 		h2 {
 			border-bottom: 2px solid #007acc;
 			padding-bottom: 5px;
+			color: #005b99;
 		}
 		ul li {
 			margin-bottom: 10px;
@@ -74,23 +91,36 @@
 			background: #fff;
 			border-left: 5px solid #007acc;
 			border-radius: 8px;
-			box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-			transition: transform 0.2s;
+			box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			transition: transform 0.3s, background 0.3s;
 		}
 		.pub-card:hover {
-			transform: translateX(5px);
-			background: #f9fcff;
+			transform: translateX(7px);
+			background: #f0faff;
+		}
+		.update-card {
+			margin: 15px 0;
+			padding: 15px;
+			background: #e8f5e9;
+			border-left: 5px solid #43a047;
+			border-radius: 8px;
+			box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			animation: fadeIn 2s ease forwards;
+		}
+		@keyframes fadeIn {
+			0% { opacity: 0; transform: translateY(20px); }
+			100% { opacity: 1; transform: translateY(0); }
 		}
 		.contact-icons a {
-			margin: 0 10px;
-			font-size: 1.3em;
+			margin: 0 12px;
+			font-size: 1.5em;
 			color: #007acc;
 			text-decoration: none;
-			transition: transform 0.3s;
+			transition: transform 0.3s, color 0.3s;
 		}
 		.contact-icons a:hover {
-			color: #005b99;
-			transform: scale(1.2);
+			color: #004d80;
+			transform: scale(1.25);
 		}
 		footer {
 			text-align: center;
@@ -101,71 +131,84 @@
 	</style>
 </head>
 <body>
-	<header>
-		<img src="profile.jpg" alt="Profile Picture">
-		<h1>Chandan Saha, PhD</h1>
-		<p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
-		<nav>
-			<a href="#about">About</a>
-			<a href="#education">Education</a>
-			<a href="#employment">Employment</a>
-			<a href="#publications">Publications</a>
-			<a href="#contact">Contact</a>
-		</nav>
-	</header>
+	<main>
+		<header>
+			<img src="profile.jpg" alt="Profile Picture">
+			<h1>Chandan Saha, PhD</h1>
+			<p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
+			<nav>
+				<a href="#about">About</a>
+				<a href="#education">Education</a>
+				<a href="#employment">Employment</a>
+				<a href="#publications">Publications</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
 
-	<section id="about">
-		<h2><i class="fas fa-user"></i> About Me</h2>
-		<p>
-			I am a Postdoctoral Fellow in Computational Psychiatry at the University of Alberta. My research focuses on mental health and neurodegenerative disease, 
-			image and signal analysis, statistical analysis, and machine learning, 
-			supported by multidisciplinary collaboration with healthcare professionals, engineers, and computer scientists.
-		</p>
-	</section>
+		<section id="about">
+			<h2><i class="fas fa-user"></i> About Me</h2>
+			<p>
+				I am a Postdoctoral Fellow in Computational Psychiatry at the University of Alberta. 
+				My research focuses on mental health and neurodegenerative disease, 
+				image and signal analysis, statistical methods, and machine learning, 
+				supported by multidisciplinary collaboration with healthcare professionals, engineers, and computer scientists.
+			</p>
+		</section>
 
-	<section id="education">
-		<h2><i class="fas fa-graduation-cap"></i> Education</h2>
-		<ul>
-			<li>PhD, Biomedical Engineering – University of Manitoba (2019–2024)</li>
-			<li>MScEng, Electronics and Communication Engineering – KUET, Bangladesh (2016–2018)</li>
-			<li>BScEng with University Gold Medal, Electronics and Communication Engineering – KUET, Bangladesh (2011–2015)</li>
-		</ul>
-	</section>
+		<section id="education">
+			<h2><i class="fas fa-graduation-cap"></i> Education</h2>
+			<ul>
+				<li>PhD, Biomedical Engineering – University of Manitoba (2019–2024)</li>
+				<li>MScEng, Electronics and Communication Engineering – KUET, Bangladesh (2016–2018)</li>
+				<li>BScEng with University Gold Medal, Electronics and Communication Engineering – KUET, Bangladesh (2011–2015)</li>
+			</ul>
+		</section>
 
-	<section id="employment">
-		<h2><i class="fas fa-briefcase"></i> Employment</h2>
-		<ul>
-			<li>Postdoctoral Fellow, Computational Psychiatry – University of Alberta (2025–present)</li>
-			<li>PhD Scholar – University of Manitoba (2019–2024)</li>
-			<li>Graduate Teaching Assistant – University of Manitoba (2021–2024)</li>
-			<li>Assistant Professor – Khulna University of Engineering & Technology (2019)</li>
-			<li>Lecturer – Khulna University of Engineering & Technology (2015–2019)</li>
-		</ul>
-	</section>
+		<section id="employment">
+			<h2><i class="fas fa-briefcase"></i> Employment</h2>
+			<ul>
+				<li>Postdoctoral Fellow, Computational Psychiatry – University of Alberta (2025–present)</li>
+				<li>PhD Scholar – University of Manitoba (2019–2024)</li>
+				<li>Graduate Teaching Assistant – University of Manitoba (2021–2024)</li>
+				<li>MITACS Accelerate Intern – Riverview Health Centre (2021–2022)</li>
+				<li>Assistant Professor – Khulna University of Engineering & Technology (2019)</li>
+				<li>Lecturer – Khulna University of Engineering & Technology (2015–2019)</li>
+			</ul>
+		</section>
 
-	<section id="publications">
-		<h2><i class="fas fa-book"></i> Selected Publications</h2>
-		<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Wang, X., Fitzgerald, P. B., Koski, L., Mansouri, B., & Moussavi, Z. (2025). Using Baseline MRI Radiomic Features to Predict the Efficacy of Repetitive Transcranial Magnetic Stimulation in Alzheimer’s Patients. <em>Medical & Biological Engineering & Computing</em>. <a href="https://link.springer.com/article/10.1007/s11517-025-03366-2" target="_blank">Link</a></div>
-		<div class="pub-card">Lithgow, B. J., Saha, C., Dastgheib, Z., & Moussavi, Z. (2025). Surface versus penetrative rTMS stimulation may be more effective for AD patients with cerebrovascular disease. <em>Neuroscience Insights</em>, 20. <a href="https://doi.org/10.1177/26331055251328355" target="_blank">Link</a></div>
-		<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Fitzgerald, P. B., Koski, L., Mansouri, B., Anssari, N., Wang, X., & Moussavi, Z. (2024). Can brain volume-driven characteristic features predict the response of Alzheimer’s patients to repetitive transcranial magnetic stimulation? <em>Brain Sciences</em>, 14(3). <a href="https://doi.org/10.3390/brainsci14030226" target="_blank">Link</a></div>
-		<div class="pub-card">Moussavi, Z., Uehara, M., Rutherford, G., Lithgow, B., Millikin, C., Wang, X., Saha, C., Mansouri, B., Omelan, C., Fellows, L., Fitzgerald, P. B., & Koski, L. (2024). Repetitive transcranial magnetic stimulation as a treatment for Alzheimer’s disease: A randomized placebo-controlled double-blind clinical trial. <em>Neurotherapeutics</em>, 21(3). <a href="https://doi.org/10.1016/j.neurot.2024.e00331" target="_blank">Link</a></div>
-		<div class="pub-card">Saha, C., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Does repetitive transcranial magnetic stimulation of Alzheimer’s patients improve cognition or depression or both?. <em>Neuroscience Insights</em>, 19. <a href="https://doi.org/10.1177/26331055241268108" target="_blank">Link</a></div>
-		<div class="pub-card">Saha, C., Figley, C. R., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Gray and white matter voxel-based morphometry of Alzheimer’s disease with and without significant cerebrovascular pathologies. <em>Neuroscience Insights</em>, 19. <a href="https://doi.org/10.1177/26331055231225657" target="_blank">Link</a></div>
-	</section>
+		<section id="publications">
+			<h2><i class="fas fa-book"></i> Selected Publications</h2>
+			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Wang, X., Fitzgerald, P. B., Koski, L., Mansouri, B., & Moussavi, Z. (2025). Using Baseline MRI Radiomic Features to Predict the Efficacy of Repetitive Transcranial Magnetic Stimulation in Alzheimer’s Patients. <em>Medical & Biological Engineering & Computing</em>. <a href="https://link.springer.com/article/10.1007/s11517-025-03366-2" target="_blank">Link</a></div>
+			<div class="pub-card">Lithgow, B. J., Saha, C., Dastgheib, Z., & Moussavi, Z. (2025). Surface versus penetrative rTMS stimulation may be more effective for AD patients with cerebrovascular disease. <em>Neuroscience Insights</em>, 20. <a href="https://doi.org/10.1177/26331055251328355" target="_blank">Link</a></div>
+			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Fitzgerald, P. B., Koski, L., Mansouri, B., Anssari, N., Wang, X., & Moussavi, Z. (2024). Can brain volume-driven characteristic features predict the response of Alzheimer’s patients to repetitive transcranial magnetic stimulation? <em>Brain Sciences</em>, 14(3). <a href="https://doi.org/10.3390/brainsci14030226" target="_blank">Link</a></div>
+			<div class="pub-card">Moussavi, Z., Uehara, M., Rutherford, G., Lithgow, B., Millikin, C., Wang, X., Saha, C., Mansouri, B., Omelan, C., Fellows, L., Fitzgerald, P. B., & Koski, L. (2024). Repetitive transcranial magnetic stimulation as a treatment for Alzheimer’s disease: A randomized placebo-controlled double-blind clinical trial. <em>Neurotherapeutics</em>, 21(3). <a href="https://doi.org/10.1016/j.neurot.2024.e00331" target="_blank">Link</a></div>
+			<div class="pub-card">Saha, C., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Does repetitive transcranial magnetic stimulation of Alzheimer’s patients improve cognition or depression or both?. <em>Neuroscience Insights</em>, 19. <a href="https://doi.org/10.1177/26331055241268108" target="_blank">Link</a></div>
+			<div class="pub-card">Saha, C., Figley, C. R., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Gray and white matter voxel-based morphometry of Alzheimer’s disease with and without significant cerebrovascular pathologies. <em>Neuroscience Insights</em>, 19. <a href="https://doi.org/10.1177/26331055231225657" target="_blank">Link</a></div>
+		</section>
 
-	<section id="contact">
-		<h2><i class="fas fa-envelope"></i> Contact</h2>
-		<p>Email: <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a></p>
-		<div class="contact-icons">
-			<a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
-			<a href="https://orcid.org/0000-0001-8814-3003" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-			<a href="https://www.linkedin.com/in/saha-chandan/" target="_blank"><i class="fab fa-linkedin"></i></a>
-		</div>
-	</section>
+		<section id="contact">
+			<h2><i class="fas fa-envelope"></i> Contact</h2>
+			<p>Email: <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a></p>
+			<div class="contact-icons">
+				<a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google"></i></a>
+				<a href="https://orcid.org/0000-0001-8814-3003" target="_blank" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+				<a href="https://www.linkedin.com/in/saha-chandan/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+			</div>
+		</section>
 
-	<footer>
-		© 2025 Dr. Chandan Saha | Built using GitHub Pages
-	</footer>
+		<footer>
+			© 2025 Dr. Chandan Saha | Built using GitHub Pages
+		</footer>
+	</main>
+
+	<aside>
+		<section id="updates">
+			<h2><i class="fas fa-bullhorn"></i> Recent Updates</h2>
+			<div class="update-card">March 2025 – Presented research on opioid use disorder prediction at the Computational Psychiatry Seminar, University of Alberta.</div>
+			<div class="update-card">February 2025 – Published article in <em>Medical & Biological Engineering & Computing</em> on MRI radiomics for Alzheimer’s disease.</div>
+			<div class="update-card">January 2025 – Joined the University of Alberta as a Postdoctoral Fellow in Computational Psychiatry.</div>
+		</section>
+	</aside>
 
 	<script>
 		const sections = document.querySelectorAll("section");
