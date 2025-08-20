@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Chandan Saha - Academic Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 850px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
       line-height: 1.6;
@@ -21,6 +22,12 @@
     header h1 {
       margin-bottom: 5px;
     }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
     nav a {
       margin: 0 15px;
       text-decoration: none;
@@ -32,14 +39,42 @@
     }
     section {
       margin-bottom: 40px;
-      padding: 15px;
+      padding: 20px;
       background: #fff;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section:nth-child(even) {
+      background: #f1f7fc;
     }
     h2 {
       border-bottom: 2px solid #007acc;
       padding-bottom: 5px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    .contact-icons a {
+      margin: 0 10px;
+      font-size: 1.3em;
+      color: #007acc;
+      text-decoration: none;
+    }
+    .contact-icons a:hover {
+      color: #005b99;
+    }
+    .cv-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #007acc;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .cv-button:hover {
+      background: #005b99;
     }
     footer {
       text-align: center;
@@ -51,6 +86,7 @@
 </head>
 <body>
   <header>
+    <img src="profile.jpg" alt="Profile Picture">
     <h1>Dr. Chandan Saha</h1>
     <p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
     <nav>
@@ -69,14 +105,15 @@
       My research focuses on predictive modeling for opioid use disorder, Alzheimer’s disease, 
       and other mental health outcomes using large-scale health data, machine learning, and explainable AI.
     </p>
+    <a class="cv-button" href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
   </section>
 
   <section id="education">
     <h2>Education</h2>
     <ul>
       <li>PhD, Biomedical Engineering – University of Manitoba (2019–2024)</li>
-      <li>MSc, Electronics and Communication Engineering – KUET, Bangladesh (2016–2018)</li>
-      <li>BSc, Electronics and Communication Engineering – KUET, Bangladesh (2011–2015)</li>
+      <li>MScEng, Electronics and Communication Engineering – KUET, Bangladesh (2016–2018)</li>
+      <li>BScEng with University Gold Medal, Electronics and Communication Engineering – KUET, Bangladesh (2011–2015)</li>
     </ul>
   </section>
 
@@ -85,13 +122,14 @@
     <ul>
       <li>Postdoctoral Fellow, Computational Psychiatry – University of Alberta (2025–present)</li>
       <li>PhD Scholar – University of Manitoba (2019–2024)</li>
+      <li>Graduate Teaching Assistant – University of Manitoba (2021–2024)</li>
       <li>Assistant Professor – Khulna University of Engineering & Technology (2019)</li>
       <li>Lecturer – Khulna University of Engineering & Technology (2015–2019)</li>
     </ul>
   </section>
 
   <section id="publications">
-    <h2>Publications</h2>
+    <h2>Selected Publications</h2>
     <ul>
       <li>Saha, C., Figley, C. R., Lithgow, B., Wang, X., Fitzgerald, P. B., Koski, L., Mansouri, B., & Moussavi, Z. (2025). Using Baseline MRI Radiomic Features to Predict the Efficacy of Repetitive Transcranial Magnetic Stimulation in Alzheimer’s Patients. <em>Medical & Biological Engineering & Computing</em>. <a href="https://link.springer.com/article/10.1007/s11517-025-03366-2" target="_blank">Link</a></li>
       <li>Lithgow, B. J., Saha, C., Dastgheib, Z., & Moussavi, Z. (2025). Surface versus penetrative rTMS stimulation may be more effective for AD patients with cerebrovascular disease. <em>Neuroscience Insights</em>. <a href="https://doi.org/10.1177/26331055251328355" target="_blank">Link</a></li>
@@ -99,23 +137,21 @@
       <li>Moussavi, Z., Uehara, M., Rutherford, G., Lithgow, B., Millikin, C., Wang, X., Saha, C., Mansouri, B., Omelan, C., Fellows, L., Fitzgerald, P. B., & Koski, L. (2024). Repetitive transcranial magnetic stimulation as a treatment for Alzheimer’s disease: A randomized placebo-controlled double-blind clinical trial. <em>Neurotherapeutics</em>, 21(3). <a href="https://doi.org/10.1016/j.neurot.2024.e00331" target="_blank">Link</a></li>
       <li>Saha, C., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Does repetitive transcranial magnetic stimulation of Alzheimer’s patients improve cognition or depression or both?. <em>Neuroscience Insights</em>. <a href="https://doi.org/10.1177/26331055241268108" target="_blank">Link</a></li>
       <li>Saha, C., Figley, C. R., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Gray and white matter voxel-based morphometry of Alzheimer’s disease with and without significant cerebrovascular pathologies. <em>Neuroscience Insights</em>. <a href="https://doi.org/10.1177/26331055231225657" target="_blank">Link</a></li>
-      <li>Saha, C., Hossain, Md. F., & Rahman, Md. A. (2020). NSCT-based robust image watermarking in DC components of APDCBT using singular value decomposition. <em>Iran Journal of Computer Science</em>. <a href="https://link.springer.com/article/10.1007/s42044-020-00070-2" target="_blank">Link</a></li>
-      <li>Saha, C., Figley, C. R., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2021). A pilot study for investigating differences between Alzheimer’s patients with and without significant vascular pathology. <em>Canadian Medical and Biological Engineering Society Proceedings</em>, 44.</li>
     </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a></p>
-    <p>
-      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> | 
-      <a href="https://orcid.org/" target="_blank">ORCID</a> | 
-      <a href="https://www.linkedin.com/in/saha-chandan/" target="_blank">LinkedIn</a>
-    </p>
+    <div class="contact-icons">
+      <a href="https://scholar.google.com/" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>
+      <a href="https://orcid.org/" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+      <a href="https://www.linkedin.com/in/saha-chandan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
   </section>
 
   <footer>
-    © 2025 Dr. Chandan Saha | Built with using GitHub Pages
+    © 2025 Dr. Chandan Saha | Built with ❤ using GitHub Pages
   </footer>
 </body>
 </html>
