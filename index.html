@@ -22,9 +22,9 @@
 			50% { background-position: 100% 50%; }
 			100% { background-position: 0% 50%; }
 		}
-		html {
-			scroll-behavior: smooth;
-		}
+		html { scroll-behavior: smooth; }
+
+		/* Navigation bar */
 		nav {
 			position: sticky;
 			top: 0;
@@ -36,6 +36,7 @@
 			padding: 12px 0;
 			border-bottom: 1px solid #ddd;
 			backdrop-filter: blur(6px);
+			flex-wrap: wrap;
 		}
 		nav a {
 			padding: 8px 14px;
@@ -49,11 +50,14 @@
 			background: #007acc;
 			color: #fff;
 		}
+
+		/* Header */
 		header {
 			display: flex;
 			align-items: center;
 			gap: 25px;
 			margin-bottom: 35px;
+			flex-wrap: wrap;
 		}
 		header img {
 			width: 160px;
@@ -61,24 +65,22 @@
 			border-radius: 50%;
 			border: 5px solid #fff;
 			box-shadow: 0 0 20px rgba(0,122,204,0.5);
+			flex-shrink: 0;
 		}
-		header .info {
-			flex: 1;
-		}
+		header .info { flex: 1; }
 		header h1 {
 			margin: 0;
 			font-size: 2.4rem;
 			color: #005b99;
 		}
-		header p {
-			margin: 10px 0;
-			font-size: 1.1rem;
-		}
+		header p { margin: 10px 0; font-size: 1.1rem; }
 		header .contact-text {
 			margin-top: 10px;
 			font-size: 0.95rem;
 			color: #333;
 		}
+
+		/* Sections */
 		section {
 			margin-bottom: 45px;
 			padding: 20px;
@@ -99,9 +101,9 @@
 			padding-bottom: 6px;
 			color: #005b99;
 		}
-		ul li {
-			margin-bottom: 10px;
-		}
+		ul li { margin-bottom: 10px; }
+
+		/* Publications */
 		.pub-card {
 			margin: 15px 0;
 			padding: 15px;
@@ -115,6 +117,8 @@
 			transform: translateX(7px);
 			background: #f0faff;
 		}
+
+		/* Footer */
 		footer {
 			text-align: center;
 			font-size: 0.9em;
@@ -122,6 +126,30 @@
 			color: #555;
 			border-top: 1px solid #ddd;
 			padding-top: 10px;
+		}
+
+		/* ----------- Mobile Responsiveness ----------- */
+		@media (max-width: 768px) {
+			header {
+				flex-direction: column;
+				text-align: center;
+			}
+			header img {
+				width: 120px;
+				height: 120px;
+				margin-bottom: 15px;
+			}
+			nav {
+				gap: 12px;
+				font-size: 0.9rem;
+			}
+			header h1 {
+				font-size: 1.8rem;
+			}
+			header p { font-size: 1rem; }
+			section {
+				padding: 15px;
+			}
 		}
 	</style>
 </head>
@@ -157,7 +185,6 @@
 				<a href="https://umanitoba.ca/engineering/faculty-staff/electrical-and-computer-engineering-faculty-and-staff/zahra-moussavi" target="_blank">Dr. Zahra Moussavi</a>. 
 				My multidisciplinary research focuses on mental health and neurodegenerative disease, image and signal analysis,
 				statistical analysis, and machine learning.
-
 			</p>
 		</section>
 
