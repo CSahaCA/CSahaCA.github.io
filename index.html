@@ -22,43 +22,84 @@
 			50% { background-position: 100% 50%; }
 			100% { background-position: 0% 50%; }
 		}
+		html {
+			scroll-behavior: smooth;
+		}
+		nav {
+			position: sticky;
+			top: 0;
+			background: rgba(255, 255, 255, 0.9);
+			z-index: 1000;
+			display: flex;
+			justify-content: center;
+			gap: 25px;
+			padding: 12px 0;
+			border-bottom: 1px solid #ddd;
+			backdrop-filter: blur(6px);
+		}
+		nav a {
+			padding: 8px 14px;
+			border-radius: 6px;
+			text-decoration: none;
+			color: #005b99;
+			font-weight: bold;
+			transition: background 0.3s, color 0.3s;
+		}
+		nav a:hover, nav a.active {
+			background: #007acc;
+			color: #fff;
+		}
 		header {
 			text-align: center;
-			padding: 20px 0;
-		}
-		header h1 {
-			margin-bottom: 5px;
-			font-size: 2.2em;
-			color: #005b99;
+			margin-bottom: 35px;
 		}
 		header img {
 			width: 160px;
 			height: 160px;
 			border-radius: 50%;
 			margin-bottom: 15px;
-			border: 5px solid white;
-			box-shadow: 0 0 25px rgba(0,122,204,0.6);
+			border: 5px solid #fff;
+			box-shadow: 0 0 20px rgba(0,122,204,0.5);
 		}
-		nav a {
-			margin: 0 15px;
-			text-decoration: none;
-			color: #007acc;
-			font-weight: bold;
-			transition: color 0.3s;
-		}
-		nav a:hover {
+		header h1 {
+			margin: 0;
+			font-size: 2.4rem;
 			color: #005b99;
-			text-decoration: underline;
+		}
+		header p {
+			margin: 10px 0;
+			font-size: 1.1rem;
+		}
+		header .contact-text {
+			margin-top: 10px;
+			font-size: 0.95rem;
+			color: #333;
+		}
+		.contact-icons {
+			margin-top: 14px;
+			display: flex;
+			justify-content: center;
+			gap: 18px;
+		}
+		.contact-icons a {
+			color: #007acc;
+			font-size: 1.6rem;
+			text-decoration: none;
+			transition: transform 0.3s, color 0.3s;
+		}
+		.contact-icons a:hover {
+			color: #004d80;
+			transform: scale(1.2);
 		}
 		section {
-			margin-bottom: 40px;
+			margin-bottom: 45px;
 			padding: 20px;
 			background: rgba(255, 255, 255, 0.8);
 			backdrop-filter: blur(10px);
 			border-radius: 12px;
 			box-shadow: 0 4px 25px rgba(0,0,0,0.1);
 			opacity: 0;
-			transform: translateY(20px);
+			transform: translateY(25px);
 			transition: all 0.6s ease-in-out;
 		}
 		section.visible {
@@ -67,7 +108,7 @@
 		}
 		h2 {
 			border-bottom: 2px solid #007acc;
-			padding-bottom: 5px;
+			padding-bottom: 6px;
 			color: #005b99;
 		}
 		ul li {
@@ -86,48 +127,60 @@
 			transform: translateX(7px);
 			background: #f0faff;
 		}
-		.contact-icons a {
-			margin: 0 12px;
-			font-size: 1.5em;
-			color: #007acc;
-			text-decoration: none;
-			transition: transform 0.3s, color 0.3s;
-		}
-		.contact-icons a:hover {
-			color: #004d80;
-			transform: scale(1.25);
-		}
 		footer {
 			text-align: center;
 			font-size: 0.9em;
-			margin-top: 30px;
-			color: #666;
+			margin-top: 40px;
+			color: #555;
+			border-top: 1px solid #ddd;
+			padding-top: 10px;
 		}
 	</style>
 </head>
 <body>
+	<nav>
+		<a href="#about" class="active">About</a>
+		<a href="#recent-news">News</a>
+		<a href="#education">Education</a>
+		<a href="#publications">Publications</a>
+	</nav>
+
 	<main>
 		<header>
 			<img src="profile.jpg" alt="Profile Picture">
 			<h1>Chandan Saha, PhD</h1>
 			<p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
-			<nav>
-				<a href="#about">About</a>
-				<a href="#education">Education</a>
-				<a href="#employment">Employment</a>
-				<a href="#publications">Publications</a>
-				<a href="#contact">Contact</a>
-			</nav>
+			<p class="contact-text">
+				<i class="fa-solid fa-envelope"></i> <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a> | 
+				<i class="fa-solid fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank">Google Scholar</a> | 
+				<i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0001-8814-3003" target="_blank">ORCID</a>
+			</p>
+			<div class="contact-icons">
+				<a href="mailto:csaha1@ualberta.ca" title="Email"><i class="fa-solid fa-envelope"></i></a>
+				<a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+				<a href="https://orcid.org/0000-0001-8814-3003" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+				<a href="https://www.linkedin.com/in/saha-chandan/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+			</div>
 		</header>
 
 		<section id="about">
 			<h2><i class="fas fa-user"></i> About Me</h2>
 			<p>
-				I am a Postdoctoral Fellow in Computational Psychiatry at the University of Alberta. 
-				My research focuses on mental health and neurodegenerative disease, 
-				image and signal analysis, statistical analysis, and machine learning, 
-				supported by multidisciplinary collaboration with healthcare professionals, engineers, and computer scientists.
+				I am a Postdoctoral Fellow in Computational Psychiatry at the University of Alberta.
+				My multidisciplinary research focuses on mental health and neurodegenerative disease, image and signal analysis,
+				statistical analysis, and machine learning. 
+            </p>
+          
 			</p>
+		</section>
+
+		<section id="recent-news" class="recent-news">
+			<h2><i class="fas fa-newspaper"></i> Recent News</h2>
+			<ul>
+				<li>[May. 2025] My paper on predicting rTMS response is published in <em>Medical & Biological Engineering & Computing</em>.</li>
+                <li>[Mar. 2025] Our paper on Surface Versus Penetrative rTMS is published in <em>Neuroscience Insights</em>.</li>
+				<li>[Jan. 2025] Joined Computational Psychiatry Gr at the University of Alberta. </li>
+			</ul>
 		</section>
 
 		<section id="education">
@@ -139,19 +192,8 @@
 			</ul>
 		</section>
 
-		<section id="employment">
-			<h2><i class="fas fa-briefcase"></i> Employment</h2>
-			<ul>
-				<li>Postdoctoral Fellow, Computational Psychiatry – University of Alberta (2025–present)</li>
-				<li>Graduate Teaching Assistant – University of Manitoba (2021–2024)</li>
-				<li>MITACS Accelerate Intern – Riverview Health Centre (2021–2022)</li>
-				<li>Assistant Professor – Khulna University of Engineering & Technology (2019)</li>
-				<li>Lecturer – Khulna University of Engineering & Technology (2015–2019)</li>
-			</ul>
-		</section>
-
 		<section id="publications">
-			<h2><i class="fas fa-book"></i> Selected Recent Publications</h2>
+			<h2><i class="fas fa-book"></i> Selected Publications</h2>
 			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Wang, X., Fitzgerald, P. B., Koski, L., Mansouri, B., & Moussavi, Z. (2025). Using Baseline MRI Radiomic Features to Predict the Efficacy of Repetitive Transcranial Magnetic Stimulation in Alzheimer’s Patients. <em>Medical & Biological Engineering & Computing</em>. <a href="https://link.springer.com/article/10.1007/s11517-025-03366-2" target="_blank">Link</a></div>
 			<div class="pub-card">Lithgow, B. J., Saha, C., Dastgheib, Z., & Moussavi, Z. (2025). Surface versus penetrative rTMS stimulation may be more effective for AD patients with cerebrovascular disease. <em>Neuroscience Insights</em>, 20. <a href="https://doi.org/10.1177/26331055251328355" target="_blank">Link</a></div>
 			<div class="pub-card">Saha, C., Figley, C. R., Lithgow, B., Fitzgerald, P. B., Koski, L., Mansouri, B., Anssari, N., Wang, X., & Moussavi, Z. (2024). Can brain volume-driven characteristic features predict the response of Alzheimer’s patients to repetitive transcranial magnetic stimulation? <em>Brain Sciences</em>, 14(3). <a href="https://doi.org/10.3390/brainsci14030226" target="_blank">Link</a></div>
@@ -160,28 +202,38 @@
 			<div class="pub-card">Saha, C., Figley, C. R., Dastgheib, Z., Lithgow, B. J., & Moussavi, Z. (2024). Gray and white matter voxel-based morphometry of Alzheimer’s disease with and without significant cerebrovascular pathologies. <em>Neuroscience Insights</em>, 19. <a href="https://doi.org/10.1177/26331055231225657" target="_blank">Link</a></div>
 		</section>
 
-		<section id="contact">
-			<h2><i class="fas fa-envelope"></i> Contact</h2>
-			<p>Email: <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a></p>
-			<div class="contact-icons">
-				<a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google"></i></a>
-				<a href="https://orcid.org/0000-0001-8814-3003" target="_blank" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
-				<a href="https://www.linkedin.com/in/saha-chandan/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-			</div>
-		</section>
-
 		<footer>
 			© 2025 Dr. Chandan Saha | Built using GitHub Pages
 		</footer>
 	</main>
 
 	<script>
+		// Animate sections on scroll
 		const sections = document.querySelectorAll("section");
 		window.addEventListener("scroll", () => {
 			sections.forEach(sec => {
 				const top = sec.getBoundingClientRect().top;
-				if(top < window.innerHeight - 100){
+				if(top < window.innerHeight - 120){
 					sec.classList.add("visible");
+				}
+			});
+		});
+
+		// Highlight active tab on scroll
+		const navLinks = document.querySelectorAll("nav a");
+		window.addEventListener("scroll", () => {
+			let current = "";
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop - 150;
+				const sectionHeight = section.clientHeight;
+				if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+					current = section.getAttribute("id");
+				}
+			});
+			navLinks.forEach(link => {
+				link.classList.remove("active");
+				if (link.getAttribute("href") === "#" + current) {
+					link.classList.add("active");
 				}
 			});
 		});
