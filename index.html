@@ -50,16 +50,20 @@
 			color: #fff;
 		}
 		header {
-			text-align: center;
+			display: flex;
+			align-items: center;
+			gap: 25px;
 			margin-bottom: 35px;
 		}
 		header img {
 			width: 160px;
 			height: 160px;
 			border-radius: 50%;
-			margin-bottom: 15px;
 			border: 5px solid #fff;
 			box-shadow: 0 0 20px rgba(0,122,204,0.5);
+		}
+		header .info {
+			flex: 1;
 		}
 		header h1 {
 			margin: 0;
@@ -74,22 +78,6 @@
 			margin-top: 10px;
 			font-size: 0.95rem;
 			color: #333;
-		}
-		.contact-icons {
-			margin-top: 14px;
-			display: flex;
-			justify-content: center;
-			gap: 18px;
-		}
-		.contact-icons a {
-			color: #007acc;
-			font-size: 1.6rem;
-			text-decoration: none;
-			transition: transform 0.3s, color 0.3s;
-		}
-		.contact-icons a:hover {
-			color: #004d80;
-			transform: scale(1.2);
 		}
 		section {
 			margin-bottom: 45px;
@@ -148,18 +136,15 @@
 	<main>
 		<header>
 			<img src="profile.jpg" alt="Profile Picture">
-			<h1>Chandan Saha, PhD</h1>
-			<p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
-			<p class="contact-text">
-				<i class="fa-solid fa-envelope"></i> <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a> | 
-				<i class="fa-solid fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank">Google Scholar</a> | 
-				<i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0001-8814-3003" target="_blank">ORCID</a>
-			</p>
-			<div class="contact-icons">
-				<a href="mailto:csaha1@ualberta.ca" title="Email"><i class="fa-solid fa-envelope"></i></a>
-				<a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-				<a href="https://orcid.org/0000-0001-8814-3003" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
-				<a href="https://www.linkedin.com/in/saha-chandan/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+			<div class="info">
+				<h1>Chandan Saha, PhD</h1>
+				<p>Postdoctoral Fellow, Computational Psychiatry<br>University of Alberta</p>
+				<p class="contact-text">
+					<i class="fa-solid fa-envelope"></i> <a href="mailto:csaha1@ualberta.ca">csaha1@ualberta.ca</a> | 
+					<i class="fa-solid fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=QjAd2KsAAAAJ&hl=en" target="_blank">Google Scholar</a> | 
+					<i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0001-8814-3003" target="_blank">ORCID</a> | 
+					<i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saha-chandan/" target="_blank">LinkedIn</a>
+				</p>
 			</div>
 		</header>
 
@@ -170,8 +155,6 @@
 				My multidisciplinary research focuses on mental health and neurodegenerative disease, image and signal analysis,
 				statistical analysis, and machine learning. 
             </p>
-          
-			</p>
 		</section>
 
 		<section id="recent-news" class="recent-news">
